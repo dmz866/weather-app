@@ -1,0 +1,58 @@
+<div class="container mt-3" *ngIf="weatherInformation">
+	<div class="row  mt-3">
+		<div class="col">
+			<label class="fw-bold">Country: </label>
+		</div>
+		<div class="col">
+			<label>{{weatherInformation.location?.country}}</label>
+		</div>
+	</div>
+	<div class="row  mt-3">
+		<div class="col">
+			<label class="fw-bold">Location: </label>
+		</div>
+		<div class="col">
+			<label>{{weatherInformation.location?.name}}</label>
+		</div>
+	</div>
+	<div class="row  mt-3">
+		<div class="col">
+			<label class="fw-bold">Temperature: </label>
+		</div>
+		<div class="col">
+			<label>{{weatherInformation.current?.temperature}}</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label class="fw-bold">Wind Speed: </label>
+		</div>
+		<div class="col">
+			<label>{{weatherInformation.current?.wind_speed}}</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label class="fw-bold">Pressure: </label>
+		</div>
+		<div class="col">
+			<label>{{weatherInformation.current?.pressure}}</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label class="fw-bold">Humidity: </label>
+		</div>
+		<div class="col">
+			<label>{{weatherInformation.current?.humidity}}</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label class="fw-bold">Description: </label>
+		</div>
+		<div class="col">
+			<label *ngFor="let desc of weatherInformation.current?.weather_descriptions">{{desc}}</label>
+		</div>
+	</div>
+</div>
