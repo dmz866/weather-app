@@ -8,10 +8,20 @@ import { WeatherResponse } from 'src/app/core/interfaces/weather/weather-respons
 })
 export class WeatherGetComponent implements OnInit {
 	@Input() weatherInformation: WeatherResponse | undefined;
+	@Input() temperatureMax: number | undefined;
+
+	weatherAlertMessage: string | undefined;
 
 	constructor() { }
 
 	ngOnInit(): void {
+		this.checkLocationTemperature();
 	}
 
+	checkLocationTemperature(): void {
+		if (this.weatherInformation && this.temperatureMax &&
+			this.weatherInformation.current.temperature > this.temperatureMax) {
+			this.weatherAlertMessage = `${this.weatherInformation.location.name} is hotter than ${this.temperatureMax} degrees.`;
+		}
+	}
 }

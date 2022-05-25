@@ -1,4 +1,9 @@
 <div class="container mt-3" *ngIf="weatherInformation">
+	<div class="row" *ngIf="weatherAlertMessage">
+		<div class="col">
+			<app-alert [message]="weatherAlertMessage"></app-alert>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col">
 			<label class="fw-bold">Country: </label>

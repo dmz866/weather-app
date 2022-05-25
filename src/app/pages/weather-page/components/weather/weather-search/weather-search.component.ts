@@ -13,8 +13,9 @@ import { WeatherService } from 'src/app/core/services/weather/weather.service';
 export class WeatherSearchComponent implements OnInit, OnDestroy {
 	weatherInformation: WeatherResponse | undefined;
 	weatherFailInformation: WeatherError | undefined;
-	location: string = '';
+	location: string | undefined;
 	subscriptionsToRemove: Subscription = new Subscription();
+	temperatureMax: number = 20;
 
 	constructor(private weatherService: WeatherService) { }
 
@@ -27,7 +28,7 @@ export class WeatherSearchComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getWeatherByLocation(location: string): void {
+	getWeatherByLocation(location: string | undefined): void {
 		this.weatherInformation = undefined;
 		this.weatherFailInformation = undefined;
 

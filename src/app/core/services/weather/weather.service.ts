@@ -5,9 +5,7 @@ import { environment } from 'src/environments/environment';
 import { WeatherFailResponse } from '../../interfaces/weather/weather-fail-response';
 import { WeatherResponse } from '../../interfaces/weather/weather-response';
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class WeatherService {
 
 	constructor(private http: HttpClient) { }

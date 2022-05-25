@@ -18,6 +18,8 @@
 		</div>
 	</div>
 	<div class="row">
-		<app-weather-get *ngIf="weatherInformation" [weatherInformation]="weatherInformation"></app-weather-get>
+		<app-weather-get *ngIf="weatherInformation" [weatherInformation]="weatherInformation"
+			[temperatureMax]="temperatureMax">
+		</app-weather-get>
 	</div>
 </div>
